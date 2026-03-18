@@ -15,9 +15,14 @@ function App() {
   }
   const displayDice = dice.map((i) => <Btn value={i} />)
   return (
-    <main>
-       {displayDice}
-    </main>
+    
+      <main>
+        {displayDice} 
+        <button className='main-roll' onClick={()=>setDice(rollDice())}>Roll</button>               
+      </main>     
+       
+    
+
   )
 }
 

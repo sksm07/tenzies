@@ -19,20 +19,33 @@ main {
     border-radius: 12px;
     margin: 50px 70px;
     display: grid;
-    grid-template: auto auto / repeat(5, 1fr);
+    grid-template-columns: repeat(5, 1fr);
     padding: 20px 30px;
     align-items: center;
 }
 
-.btn-roll {
+.btns {
     width: 50px;
     height: 50px;
-    box-shadow: 0px 3px  rgb(172, 106, 139);
+    box-shadow: 0px 3px  rgb(190, 132, 161);
     font-size: 1.6rem;
     font-weight: 500;
     font-family: Inter sans-serif;
     border-radius: 10px;
     border: none;
+    
+}
+
+.main-roll {
+    background-color: rgb(75, 57, 116);
+    height: 50px;
+    width: 100px;
+    border: none;
+    border-radius: 6px;
+    color:azure;
     cursor: pointer;
+    font-size: 1.2rem;
+    justify-self: center;
+    grid-column: span 5;
 }
 
