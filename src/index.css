@@ -49,3 +49,10 @@ main {
     grid-column: span 5;
 }
 
+h1, p {
+    color: rgb(187, 235, 235);  
+    padding: 0.2px 0.1px; 
+    justify-self: center; 
+}
+
+

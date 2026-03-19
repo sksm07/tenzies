@@ -5,6 +5,6 @@ export default function Btn(props) {
         backgroundColor: props.isHeld ? "#59E391" : "white"
     }
     return (
-        <button style={styles} className="btns">{props.value}</button>
+        <button style={styles} className="btns" onClick={props.hold}>{props.value}</button>
     )
 }

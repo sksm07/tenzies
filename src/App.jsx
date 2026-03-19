@@ -12,25 +12,36 @@ function App() {
       const rand = Math.ceil(Math.random()*6 ) 
       arr.push({
         value: rand,
-        isHeld: true,
+        isHeld: false,
         id: nanoid()
       })
     }
     return arr;
   }
-  console.log(rollDice())
+
+  function newRoll() {
+    setDice(oldDice => oldDice.map(dice => 
+      dice.isHeld ? 
+      dice : {...dice, value: Math.ceil(Math.random()*6 )}));
+  }
+  
+  function hold(id) {
+    setDice(oldDice => oldDice.map(
+      dice => dice.id === id ? {...dice, isHeld: !dice.isHeld} : dice))
+  }
   const displayDice = dice.map((diceObj) => (
-      <Btn key={diceObj.id} value={diceObj.value} isHeld={diceObj.isHeld} />)
+      <Btn key={diceObj.id} id={diceObj.id} value={diceObj.value} isHeld={diceObj.isHeld} hold={() =>hold(diceObj.id)} />)
    )
-  return (
-    
+  return (  
+    <> 
+      <h1 className='title'>Tenzies</h1>
+      <p className="instructions">Roll until all dice are the same. 
+         Click each die to freeze it at its current value between rolls.</p>
       <main>
         {displayDice} 
-        <button className='main-roll' onClick={()=>setDice(rollDice())}>Roll</button>               
-      </main>     
-       
-    
-
+        <button className='main-roll' onClick={newRoll}>Roll</button>               
+      </main>   
+    </>   
   )
 }
 
