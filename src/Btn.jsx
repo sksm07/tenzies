@@ -1,6 +1,10 @@
 
 export default function Btn(props) {
+    
+    const styles= {
+        backgroundColor: props.isHeld ? "#59E391" : "white"
+    }
     return (
-        <button className="btn-roll">{props.value}</button>
+        <button style={styles} className="btns">{props.value}</button>
     )
 }
